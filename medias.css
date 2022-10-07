@@ -1,0 +1,36 @@
+    /* Below 1700 PX */
+@media (max-width: 106.25em) {
+    .countries {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+}
+
+    /* Below 1450 PX */
+@media (max-width: 90.625em) {
+    .countries {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+    /* Below 1000 PX */
+@media (max-width: 62.5em) {
+    .countries {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+ /* Below 650 PX */
+@media (max-width: 40.625em) {
+    .countries {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .btn-country {
+        padding: 1.5rem 2.5rem !important;
+    }
+    .my-country {
+        padding: 1.5rem 2.5rem !important;
+    }
+    .neighbour {
+        margin-left: 3rem !important;
+    }
+}
