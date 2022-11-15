@@ -51,7 +51,6 @@ const getCountryData = function(country) {
   .catch(err => {
     renderError(`${err.message}`)
 } ).finally((arg) => {
-  console.log(`I always execute, so I can be used in lots of ways`);
   countriesContainer.style.opacity = 1;
 })
 };
