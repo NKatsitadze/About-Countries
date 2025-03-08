@@ -6,13 +6,11 @@ const countriesContainer = document.querySelector('.countries');
 const errBox = document.querySelector('.error');
 const input = document.querySelector('.country-input')
 
-////////////////////////////////////////////////////////////////
 const renderError = function(msg) {
-  errBox.innerText = msg;
+  errBox.innerText = msg + ',' + ' Please try again.';
   errBox.classList.remove('hidden');
   countriesContainer.style.opacity = 1;
 }
-////////////////////////////////////////////////////////////////
 
 const renderCountry = function(data, className) {
   const html = `<article class="country ${className}">
@@ -38,7 +36,6 @@ const getCountryData = function(country) {
   })
   .then(data => {
     renderCountry(data[0], 'main');
-    const neighbour = data[0].borders?.[0];
     const allNeighbours = data[0].borders;
     if (!allNeighbours) throw new Error(`This country has no neighbours`)
     return allNeighbours;
@@ -84,29 +81,10 @@ myBtn.addEventListener('click', function() {
 });
 
 btn.addEventListener('click', function(arg) {
-  let answer = window.prompt(`Choose Country`)
+  const answer = window.prompt(`Choose Country`)
   arg = answer;
   errBox.classList.add('hidden');
   const previousCountries = document.querySelectorAll('.country');
   previousCountries.forEach(el => el.remove());
   getCountryData(arg)
 } );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
